@@ -1,59 +1,60 @@
-# 个人摄影作品集
+<div align="center">
+  <h1>Photo Portfolio</h1>
+  <p>A lightweight Flask photo portfolio with categorized galleries, thumbnails, and admin upload tools.</p>
 
-一个基于 Flask 的个人摄影作品集网站。照片放入 `photos/` 后，应用会生成缩略图并在网页中按分类展示。
+  <p>
+    <a href="README.zh-CN.md">Chinese</a>
+    &middot;
+    <a href="#quickstart">Quickstart</a>
+    &middot;
+    <a href="#tech-stack">Tech Stack</a>
+  </p>
 
-## 功能
+  <p>
+    <img alt="Python: Flask" src="https://img.shields.io/badge/Python-Flask-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+    <img alt="Images: Pillow" src="https://img.shields.io/badge/Images-Pillow-287866?style=for-the-badge" />
+    <img alt="Portfolio: gallery" src="https://img.shields.io/badge/Portfolio-gallery-7d73b7?style=for-the-badge" />
+  </p>
+</div>
 
-- 响应式设计，适配各种设备
-- 按文件夹/分类组织照片
-- 自动生成缩略图，减少页面加载压力
-- 点击缩略图查看原图
-- 图片懒加载
+<p align="center">
+  <img src=".github/assets/readme-hero.svg" alt="Photo Portfolio overview image" width="100%" />
+</p>
 
-## 安装与运行
+## Why This Exists
 
-1. 安装依赖：
-   ```
-   pip install -r requirements.txt
-   ```
+A personal photo site should be easy to update without rebuilding the whole page. This app keeps the workflow simple: upload photos, generate thumbnails, and browse them by category.
 
-2. 运行应用：
-   ```
-   python app.py
-   ```
+## Quickstart
 
-3. 访问网站：
-   在浏览器中打开 http://localhost:5000
-
-## 使用方法
-
-将照片放入 `photos/` 文件夹后，应用会自动读取。支持的图片格式包括：
-- JPG/JPEG
-- PNG
-- GIF
-
-## 项目结构
-
-```
-.
-├── app.py              # Flask应用主文件
-├── photos/             # 存放照片的文件夹
-├── requirements.txt    # 项目依赖
-├── static/             # 静态资源文件夹
-│   ├── css/            # CSS样式文件
-│   └── js/             # JavaScript文件
-└── templates/          # HTML模板
-    └── index.html      # 主页模板
+```bash
+git clone https://github.com/Ha22yX/Photo-portfolio.git
+cd Photo-portfolio
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
 ```
 
-## 技术栈
+Open `http://127.0.0.1:5001` after the server starts.
 
-- Flask: 轻量级Python Web框架
-- Pillow: 图像处理库，用于生成缩略图
-- Tailwind CSS: 实用优先的CSS框架，用于构建响应式界面
+## Features
 
-## 自定义
+- Category-based photo gallery for personal portfolio pages.
+- Thumbnail generation with Pillow to reduce page weight.
+- Admin-facing upload and management flow.
+- Responsive templates for browsing photos on different screens.
 
-您可以通过修改以下文件来自定义网站：
-- `templates/index.html`: 修改网站布局和样式
-- `app.py`: 调整缩略图大小或添加新功能
+## Tech Stack
+
+| Layer | Technology | Role |
+| --- | --- | --- |
+| Backend | Flask | Routes, upload flow, gallery rendering. |
+| Images | Pillow | Thumbnail generation and image handling. |
+| Auth | Flask-Login, Werkzeug | Simple admin session and password helpers. |
+| Frontend | Jinja templates | Gallery and admin pages. |
+
+
+## Project Notes
+
+This is a personal portfolio app rather than a hosted service. Configure credentials and image folders before exposing it publicly.
