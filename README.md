@@ -23,7 +23,21 @@
 
 ## Why This Exists
 
-A personal photo site should be easy to update without rebuilding the whole page. This app keeps the workflow simple: upload photos, generate thumbnails, and browse them by category.
+A personal photography site should be easy to maintain without rebuilding pages manually. This app gives a small self-hosted workflow for uploading, thumbnailing, organizing, and presenting photo work.
+
+## Workflow
+
+- Upload photos through the admin flow.
+- Generate thumbnails to keep the public gallery light.
+- Group photos by category or folder-style organization.
+- Serve a responsive portfolio page for browsing work.
+
+## Features
+
+- Flask-based gallery and admin pages.
+- Thumbnail generation with Pillow.
+- Login-protected admin workflow.
+- Responsive Jinja templates for browsing photo categories.
 
 ## Quickstart
 
@@ -38,23 +52,24 @@ python app.py
 
 Open `http://127.0.0.1:5001` after the server starts.
 
-## Features
-
-- Category-based photo gallery for personal portfolio pages.
-- Thumbnail generation with Pillow to reduce page weight.
-- Admin-facing upload and management flow.
-- Responsive templates for browsing photos on different screens.
-
 ## Tech Stack
 
 | Layer | Technology | Role |
 | --- | --- | --- |
-| Backend | Flask | Routes, upload flow, gallery rendering. |
+| Backend | Flask | Routes, upload flow, and gallery rendering. |
 | Images | Pillow | Thumbnail generation and image handling. |
-| Auth | Flask-Login, Werkzeug | Simple admin session and password helpers. |
-| Frontend | Jinja templates | Gallery and admin pages. |
+| Auth | Flask-Login, Werkzeug | Admin session and password helpers. |
+| Frontend | Jinja templates | Gallery and admin UI. |
 
+## Project Map
 
-## Project Notes
+```text
+app.py                  Flask application
+templates/              public and admin templates
+requirements.txt        Python dependencies
+app.log                 local runtime log
+```
 
-This is a personal portfolio app rather than a hosted service. Configure credentials and image folders before exposing it publicly.
+## Notes
+
+Configure admin credentials, upload folders, and deployment access before exposing the app publicly.
